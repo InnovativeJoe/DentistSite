@@ -340,9 +340,8 @@ export default function Home() {
             <Link href="#faqs" className="hover:text-foreground">FAQs</Link>
             <Link href="#blog" className="hover:text-foreground">Blog</Link>
           </nav>
-          <Button asChild size="sm" className="shrink-0">
+          <Button asChild size="sm" variant="outline" className="shrink-0 rounded-full border-neutral-200 bg-white text-neutral-500 shadow-none hover:bg-neutral-50 hover:text-neutral-700">
             <Link href={appointmentHref} {...externalLinkProps}>
-              <Calendar className="h-4 w-4" />
               Book an Appointment
             </Link>
           </Button>
@@ -372,12 +371,18 @@ export default function Home() {
               and EMI-friendly payment options.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="w-full sm:w-auto">
-                <Link href={appointmentHref} {...externalLinkProps}>
-                  <Calendar className="h-4 w-4" />
+              <Link 
+                href={appointmentHref} 
+                {...externalLinkProps} 
+                className="group relative inline-flex w-full sm:w-auto items-center justify-center rounded-full p-[2px] transition duration-300 hover:scale-[1.02] active:scale-95 shadow-sm"
+              >
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-300 via-yellow-200 to-pink-400 bg-[length:200%_auto] blur-[3px] opacity-60 transition duration-300 group-hover:animate-gradient group-hover:opacity-100 pointer-events-none"></span>
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-300 via-yellow-200 to-pink-400 bg-[length:200%_auto] transition duration-300 group-hover:animate-gradient pointer-events-none"></span>
+                <span className="relative flex h-full w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-lg font-medium text-neutral-800">
+                  <Calendar className="h-5 w-5" />
                   Book an Appointment Now
-                </Link>
-              </Button>
+                </span>
+              </Link>
             </div>
             <div className="mt-8 grid gap-3 text-sm text-neutral-700 sm:grid-cols-3">
               <span className="flex items-center gap-2"><Clock className="h-4 w-4" /> Open today: 11 AM - 8:30 PM</span>
@@ -759,8 +764,8 @@ export default function Home() {
             
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button asChild>
-              <Link href={phoneHref}><Phone className="h-4 w-4" /> {phoneDisplay}</Link>
+            <Button asChild variant="outline" className="rounded-full border-neutral-200 bg-white text-neutral-500 shadow-none hover:bg-neutral-50 hover:text-neutral-700">
+              <Link href={phoneHref}><Phone className="mr-2 h-4 w-4" /> {phoneDisplay}</Link>
             </Button>
           </div>
         </div>

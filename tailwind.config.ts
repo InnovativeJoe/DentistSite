@@ -54,6 +54,15 @@ const config: Config = {
       },
       boxShadow: {
         soft: "0 20px 70px rgba(0, 0, 0, 0.08)"
+      },
+      keyframes: {
+        gradient: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" }
+        }
+      },
+      animation: {
+        gradient: "gradient 3s ease infinite"
       }
     }
   },
